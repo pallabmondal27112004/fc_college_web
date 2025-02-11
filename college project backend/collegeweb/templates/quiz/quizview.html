@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block quiz %}
+{% load static %}
+{% load customFilter %}
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    {% for i in data%}
+
+    <div class="carousel-item active">
+      <h1 class=" my-2"> {{i}}</h1>
+      {% for j in i.Catagory.all%}
+      <h4 class="fw-bold">{{j}}</h4>
+      <p class="text-muted">Choose one correct answer:</p>
+      <!-- Options -->
+      <form id="mcqForm">
+        {%for k in j.Question.all%}
+        <div class="form-check option mb-2">
+          <input class="form-check-input" type="radio" name="mcqOption" id="option1" value="Paris">
+          <label class="form-check-label" for="option1">
+            {{k.id}} {{k}}
+          </label>
+        </div>
+        {% endfor %}
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary mt-3 " onclick="opendiv()">Submit Answer</button>
+      </form>
+      {% endfor %}
+
+    </div>
+    {% endfor %}
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+</div>
+{% endblock %}

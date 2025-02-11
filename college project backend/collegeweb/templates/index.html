@@ -1,0 +1,240 @@
+{% extends 'base.html' %}
+{% block index %}
+{% load static %}
+<div class="container-fluit position-relative w-100">
+    <div class="d-flex justify-content-center align-items-center flex-column gap-5 z-3 position-absolute top-0 left-0 w-100 "
+        style="background: rgba(0, 0, 0, 0.781); height: 600px;">
+
+
+        <h1 class="text-white text-center fw-bolder">Welcome To</h1>
+        <h1 class="text-white fw-bold" style="font-size: 4rem;">FAKIR CHAND COLLEGE</h1>
+        <p class="text-white text-center px-5">"It is the aim of the College to promote the course of education in the
+            highest and widest sense to make
+            education comprehending the training of the mind, heart and body founded on a theistic basis conducive
+            to the good of man and the glory of God." Fakir Chand College stands today in Diamond Harbour, in the
+            deep south of West Bengal – the culmination of the vision of one man to bring higher education
+            facilities to the people of this area. About 100 km from south to north, there was no college before
+            independence.</p>
+        <div class="d-flex  w-50">
+            <div class="btn-group">
+                <li type="button"
+                    class=" dropdown-toggle text-black fs-4 fw-bold  d-flex justify-content-center align-items-center p-2 px-3 fs-6 fw-bold bg-white border-end border-black"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Cources
+                </li>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Cources1 </a></li>
+                    <li><a class="dropdown-item" href="#">Cources2</a></li>
+                    <li><a class="dropdown-item" href="#">Cources3</a></li>
+                    <li><a class="dropdown-item" href="#">Cources4</a></li>
+                </ul>
+            </div>
+            <input type="text" class=" border border-0 w-75 ps-2" placeholder="Keyword">
+            <button class="w-25 border border-none bg-danger text-white text-bold fs-4">Search</button>
+        </div>
+    </div>
+
+    <div class="w-100 ">
+        <img src="{% static 'assets/imgs/nimgs/header.jpg' %}" class="w-100" alt="" style="height: 600px;">
+    </div>
+</div>
+<div class="w-100" style="position: relative; z-index: 10; top: -3rem">
+    <img src="{% static 'assets/imgs/nimgs/overlay-bottom.png' %}" alt="" class="w-100">
+</div>
+<!-- =============why choice cource=============== -->
+<div class="container-fluit row w-100 justify-content-center">
+    <div class="col-6 p-5">
+        <h3 class="text-danger">Why Choose Us?</h3>
+        <h1 class="py-3">Why You Should Start Learning with Us?</h1>
+        <p>Aliquyam accusam clita nonumy ipsum sit sea clita ipsum clita, ipsum dolores amet voluptua duo dolores et
+            sit ipsum rebum, sadipscing et erat eirmod diam kasd labore clita est. Diam sanctus gubergren sit rebum
+            clita amet.</p>
+        <div class="w-100">
+            <div class=" row mb-2">
+                <div class="col-2 d-flex justify-content-center align-items-center fs-6 text-white bg-primary">
+                    <i class="fa-solid fa-graduation-cap fs-1"></i>
+                </div>
+                <div class="col-9">
+                    <h3 class="fw-bolder">Skilled Instructors</h3>
+                    <p class="text-secondary">Labore rebum duo est Sit dolore eos sit tempor eos stet, vero vero
+                        clita magna kasd no nonumy et eos dolor magna ipsum.</p>
+                </div>
+            </div>
+            <div class=" row mb-2">
+                <div class="col-2 d-flex justify-content-center align-items-center fs-6 text-white bg-warning">
+                    <i class="fa-solid fa-ethernet fs-1"></i>
+                </div>
+                <div class="col-9">
+                    <h3 class="fw-bolder">International Certificate</h3>
+                    <p class="text-secondary">Labore rebum duo est Sit dolore eos sit tempor eos stet, vero vero
+                        clita magna kasd no nonumy et eos dolor magna ipsum.</p>
+                </div>
+            </div>
+            <div class=" row mb-2">
+                <div class="col-2 d-flex justify-content-center align-items-center fs-6 text-white bg-danger">
+                    <i class="fa-solid fa-book-open-reader fs-1 "></i>
+                </div>
+                <div class="col-9">
+                    <h3 class="fw-bolder">
+                        Online Classes</h3>
+                    <p class="text-secondary">Labore rebum duo est Sit dolore eos sit tempor eos stet, vero vero
+                        clita magna kasd no nonumy et eos dolor magna ipsum.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-4">
+        <img src="{% static 'assets/imgs/nimgs/feature.jpg' %}" class="w-100 p-5" alt="" style="height: 600px;">
+    </div>
+</div>
+<!-- =======offer for inrollment========== -->
+<div class="d-flex flex-column justify-content-center align-items-center my-5 mb-5">
+    <h1 class="text-center fs-1 fw-bold">30% Off For New Students</h1>
+    <div class="w-50">
+        <div class="d-flex justify-content-center align-items-center ">
+            <input type="text" placeholder="First name" class="border-0 p-3 form-control">
+            <input type="text" placeholder="Last name" class="border-0 p-3 form-control">
+        </div>
+        <div class="d-flex justify-content-center align-items-center mt-2 w-75">
+            <select name="Select choice" id="" class="border-0 p-3 px-5 mx-3 form-control">
+                <option value="">Choice </option>
+                <option value="">Cource1</option>
+                <option value="">Cource2</option>
+                <option value="">Cource3</option>
+                <option value="">Courc4</option>
+            </select>
+            <button class="bg-danger border-0 border-0 p-3 px-5 text-white fw-bold form-control">Sign up
+                now?</button>
+        </div>
+    </div>
+</div>
+<div class="w-100">
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <div class="alert alert-primary" role="alert">
+            {{message}}
+        </div>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <div class="my-5 ms-5">
+        <h1 class="fs-1 text-center text-primary my-3 my-3 "><span><i class="fa-solid fa-graduation-cap"></i></span>Meet
+            Our Instructors</h1>
+
+
+        <div class="owl-carousel position-related container-fluid d-flex  justify-content-center align-item-center ">
+            {% for i in student %}
+            <div class="d-flex flex-column justify-content-center align-item-center ms-3"
+                style="width: 300px; height: 400px;">
+
+                <div class="w-100">
+                    <img src="{{i.image.url}}" alt="" class="w-100" style="height: 300px;">
+                </div>
+                <div class="d-flex justify-content-center align-item-center flex-column">
+                    <h4 class="text-center fs-4 fw-bold">{{i.name}}</h4>
+                    <p class="text-center text-secondary">{{i.job}} </p>
+                    <div class="d-flex justify-content-center align-item-center gap-4 fs-3 text-danger">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-linkedin"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+        </div>
+
+    </div>
+   
+    <div class="w-100 mt-5 mb-5">
+        <div>
+            <h5 class="text-center text-danger">Our Courses</h5>
+            <h1 class="text-center my-4">Checkout New Releases Of Our Courses </h1>
+        </div>
+        <div class="d-flex justify-content-center align-item-center flex-wrap gap-5 px-5 mx-5">
+            {% for i in cource %}
+            <div class="position-relative" style="width: 300px;">
+
+                <div class="position-absolute top-0 start-0 bg-black h-100 bg-opacity-50 text-white"  style=" width:
+                    300px;">
+                    <h1 class="fs-4 text-center " style="margin-top:80% ;">{{i.courceName}}
+                    </h1>
+                    <hr class="border border-white border-1 opacity-100">
+
+                    <div class="row px-3">
+                        <div class="col-5">
+                            <i class="fa-solid fa-person"></i><span class="mx-2">{{i.host}}</span>
+                        </div>
+                        <div class="col-2"></div>
+                        <div class="col-5">
+                            <i class="fa-solid fa-star"></i><span class="mx-2">{{i.rating}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100">
+                    <img src="{{i.image.url}}" alt="" class="" style="width: 300px;">
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+  
+
+    <div class="row justify-content-center my-5 w-100">
+        <div class="col-3 mt-5">
+            <div class=" row mb-2" >
+                <div class="col-2 d-flex justify-content-center align-items-center text-white bg-primary" style=" height: 60px;">
+                    <i class="fa-solid fa-location-dot fs-1"></i>
+                </div>
+                <div class="col-9 ms-3">
+    
+    
+    
+                    <h3 class="fw-bolder">Our Location</h3>
+                    <p class="text-secondary">123 Street, New York, USA</p>
+                </div>
+            </div>
+            <div class=" row mb-2">
+                <div class="col-2 d-flex justify-content-center align-items-center fs-6 text-white bg-warning" style=" height: 60px;">
+                    <i class="fa-solid fa-phone fs-3"></i>
+                </div>
+                <div class="col-9 ms-3">
+                    <h3 class="fw-bolder">Call Us</h3>
+                    <p class="text-secondary">+012 345 6789</p>
+                </div>
+            </div>
+            <div class=" row mb-2">
+                <div class="col-2 d-flex justify-content-center align-items-center fs-6 text-white bg-danger" style=" height: 60px;">
+                    <i class="fa-solid fa-envelope fs-1"></i>
+                </div>
+                <div class="col-9 ms-3">
+                    <h3 class="fw-bolder">Email Us</h3>
+                    <p class="text-secondary"> info@example.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <p class="text-danger ">Need Help?</p>
+            <h1>Send Us A Message</h1>
+            <div class="d-flex flex-column justify-content-center align-item-center gap-3">
+                <div class="d-flex gap-2">
+                    <input type="text" class="form-control" placeholder="First name">
+                    <input type="text" class="form-control" placeholder="Last name">
+                </div>
+                <input type="text" class="form-control" placeholder="Subject">
+                <textarea name="" id="" class="form-control" placeholder="Messages"></textarea>
+                <button class="btn btn-danger">Submit</button>
+            </div>
+        </div>
+    </div>
+  
+
+
+
+    {% endblock %}

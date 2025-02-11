@@ -1,0 +1,88 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <div class="col-3 d-flex justify-content-center align-items-center">
+            <img src="{%static 'assets/imgs/oimgs/logo1.png'%}" class="w-25" alt="">
+            <div class="m-0 p-0 ms-2 d-flex justify-content-center align-items-center flex-column h-75"
+                style="box-sizing: border-box;">
+                <p class="m-0 p-0 fw-bold" style="font-size: .5rem;">Diamond Harbour, West Benga
+                </p>
+                <p class="m-0 p-0 fw-bold " style="font-size: .5rem;">AFFILIATED TO UNIVERCITY OF CALCUTTA</p>
+                <p class="m-0 p-0 fw-bold" style="font-size: .5rem;"> NAAC Accredited</p>
+                <p class="m-0 p-0 fw-bold" style="font-size: .5rem;"> Grade B++ (2nd Cycle)</p>
+            </div>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item ms-2">
+                    <a class="nav-link active text-black fs-5 fw-bold" aria-current="page"
+                        href="{% url 'home'%}">Home</a>
+                </li>
+                <li class="nav-item ms-1">
+                    <a class="nav-link  text-black fs-5 fw-bold" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="nav-item ms-1">
+                    <a class="nav-link  text-black fs-5 fw-bold" href="{% url 'cource'%}">Cources</a>
+                </li>
+                <div class="btn-group m-2 ms-1">
+                    <li type="button" class=" dropdown-toggle text-black fs-5 fw-bold" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        pages
+                    </li>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'courcedetails'%}">Cource detalis </a></li>
+                        <li><a class="dropdown-item" href="feature.htm">Our feature</a></li>
+                        <li><a class="dropdown-item" href="{% url 'studentsay'%}">Instructors</a></li>
+                        <li><a class="dropdown-item" href="{% url 'testimonial'%}">Testimonial</a></li>
+                    </ul>
+                </div>
+                <li class="nav-item ms-1">
+                    <a class="nav-link  text-black fs-5 fw-bold" href="{% url 'contect'%}">contect</a>
+                </li>
+                
+                <div class="btn-group m-2 ms-1 active">
+                    <li type="button" class=" dropdown-toggle text-black fs-5 fw-bold" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Features
+                    </li>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'resumeUploder1'%}">Resume uploder</a></li>
+                        <li class="border border-0 border-top"><a class="dropdown-item" href="{% url 'quiz'%}">Quiz</a></li>
+    
+                     
+                    </ul>
+                </div>
+                <li class="nav-item ms-1">
+                    <a class="nav-link  text-black fs-5 fw-bold" href="{% url 'dashboard'%}">Dashboard</a>
+                </li>
+            </ul>
+            <span class="navbar-text me-5">
+                <!-- <div class="col-3 d-flex justify-content-center align-items-start"> -->
+                <!-- <a href="{% url 'login'%}"><button class="btn btn-danger mt-1 fs-5 ">Login</button></a>
+                <a href="{% url 'register'%}"><button class="btn btn-danger mt-1 fs-5">Sign in</button></a>
+                <a href="#"><button class="btn btn-danger mt-1 fs-5">logout</button></a> -->
+               {% if not user.is_authenticated %}
+                
+                <a href="{% url 'login'%}"><button class="btn btn-danger mt-1 fs-5  fw-bold">Login</button></a>
+                <a href="{% url 'register'%}"><button class="btn btn-danger mt-1 fs-5 fw-bold">Sign in</button></a>
+                {% else %}
+                <a href="{% url 'logout'%}" class="btn btn-danger mt-1 fs-5 text-white fw-bold">Logout</a>
+                {% endif %}
+
+
+                
+
+
+
+
+                <!-- </div> -->
+            </span>
+        </div>
+    </div>
+</nav>
+<div>

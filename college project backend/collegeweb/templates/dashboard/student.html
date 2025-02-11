@@ -1,0 +1,117 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block student%}
+<style>
+  .django div{
+    width: 100%;
+    margin: 1rem;
+  }
+  label[for="id_student_id"] {
+        display: none;
+    }
+</style>
+<div class="" style="margin-top:5%; margin-left: 15%">
+  <h1 class="mb-3">Student List</h1>
+  <div class="container-fluid my-3">
+    <form action="" class="container-fluid d-flex justify-content-end">
+      <input type="text" name="input" placeholder="Search ........" class="w-100 form-control py-2">
+      <button type="submit" class="btn btn-dark p-2 px-5">Search</button >
+    </form>
+  </div>
+
+
+  <table class="table table-success table-striped-columns table table-hover">
+
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Profile</th>
+        <th scope="col">Name</th>
+        <th scope="col">Role</th>
+        <th scope="col">Dept.</th>
+        <th scope="col">Rnak</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in student%}
+      <tr>
+        <th scope="row">{{i.id}}</th>
+        <td>
+          <div class="" style="width: 51px; height: 51px; "><img src="{{i.image.url}}" alt="" class=""
+              style="width: 100%;height: 100%;; border-radius: 50%;"></div>
+        </td>
+        <td>{{i.name}}</td>
+        <td>{{i.job}}</td>
+        <td>BCA</td>
+        <td>{{i.id}}</td>
+        {% if i.student_id.id == user.id%}
+        <td class=""><a href="{% url 'editStudent' i.id %}">
+
+            <i class="icon-crop fw-bold " style="font-size: 1.5rem;"></i>
+          </a></td>
+        <td><a href="{% url 'deleteStudent' i.id %}"><img src="{% static 'dashboardAsstes/images/image.png' %}" alt=""
+              style="width: 20px;"></a></td>
+          {% else %}
+          <td class=" text-danger">None</td>
+          <td class="text-danger">None</td>
+        
+          {% endif %}
+      </tr>
+      {% endfor %}
+
+    </tbody>
+
+  </table>
+  <!-- Button trigger modal -->
+  <!-- Button trigger modal -->
+
+  <tfoot>
+    <div class="text-center">
+      <button class="btn btn-primary " onclick="visiblediv()">Add student</button>
+    </div>
+  </tfoot>
+  <div id="addStudent" class="opacity-0 mt-4">
+    <div class="container-fluid" style="display: flex; justify-content:center;">
+      <div class="row ">
+          <div class="col-sm-12">
+              <div class="login-card card-block bg-white ">
+                  <form class="md-float-material " action="" method="post" enctype="multipart/form-data">
+                      {% csrf_token %}
+                  
+                      <div class="django d-flex justify-content-center flex-column gap-2 w-100 md-input-wrapper">
+                          {{form}}
+                      </div>
+                      <div class="col-xs-10 offset-xs-1">
+                          <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light m-b-20" onclick="visiblediv()">Submit
+                          </button>
+                      </div>
+                  
+                  
+                  </form>
+                  <!-- end of form -->
+              </div>
+              <!-- end of login-card -->
+          </div>
+          <!-- end of col-sm-12 -->
+      </div>
+      <!-- end of row-->
+  </div>
+
+
+  </div>
+</div>
+</div>
+
+<script>
+  function visiblediv(){
+    var div =document.getElementById('addStudent')
+    div.classList.toggle("opacity-100")
+  }
+</script>
+
+
+<!-- Modal -->
+
+{% endblock %}

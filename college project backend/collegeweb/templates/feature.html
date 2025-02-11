@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include "bootstraplink.html" %}
+</head>
+
+<body>
+    {% include "header.html" %}
+    {% include "nevBar.html" %}
+    <!-- ======================body section=================== -->
+    <div class="container-fluit position-relative w-100">
+        <div class="d-flex justify-content-center align-items-center flex-column gap-5 z-3 position-absolute top-0 left-0 w-100 "
+            style=" height: 600px; background-color: rgba(5, 0, 0, 0.85);">
+            <h1 class="text-white text-center fw-bolder"  style="font-size: 5rem;" >
+                
+                Features</h1>
+                <p class="text-white fs-4 fw-bold">Home >> Features</p>
+
+
+            <div class="d-flex  w-50">
+                <div class="btn-group">
+                    <li type="button"
+                        class=" dropdown-toggle text-black fs-4 fw-bold  d-flex justify-content-center align-items-center p-2 px-3 fs-6 fw-bold bg-white border-end border-black"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Cources
+                    </li>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Cources1 </a></li>
+                        <li><a class="dropdown-item" href="#">Cources2</a></li>
+                        <li><a class="dropdown-item" href="#">Cources3</a></li>
+                        <li><a class="dropdown-item" href="#">Cources4</a></li>
+                    </ul>
+                </div>
+                <input type="text" class=" border border-0 w-75 ps-2" placeholder="Keyword">
+                <button class="w-25 border border-none bg-danger text-white text-bold fs-4">Search</button>
+            </div>
+        </div>
+
+        <div class="w-100 ">
+            <img src="assets/imgs/nimgs/page-header.jpg" class="w-100" alt="" style="height: 600px;">
+        </div>
+    </div>
+    <div class="w-100" style="position: relative; z-index: 10; top: -4rem">
+        <img src="assets/imgs/nimgs/overlay-bottom.png" alt="" class="w-100">
+    </div>
+    <!-- =============why choice cource=============== -->
+   <div class="container-fluit row w-100 justify-content-center">
+    <div class="col-6 p-5">
+        <h3 class="text-danger">Why Choose Us?</h3>
+        <h1 class="py-3">Why You Should Start Learning with Us?</h1>
+        <p>Aliquyam accusam clita nonumy ipsum sit sea clita ipsum clita, ipsum dolores amet voluptua duo dolores et
+            sit ipsum rebum, sadipscing et erat eirmod diam kasd labore clita est. Diam sanctus gubergren sit rebum
+            clita amet.</p>
+        <div class="w-100">
+            <div class=" row mb-2">
+                <div class="col-2 d-flex justify-content-center align-items-center fs-6 text-white bg-primary">
+                    <i class="fa-solid fa-graduation-cap fs-1"></i>
+                </div>
+                <div class="col-9">
+                    <h3 class="fw-bolder">Skilled Instructors</h3>
+                    <p class="text-secondary">Labore rebum duo est Sit dolore eos sit tempor eos stet, vero vero
+                        clita magna kasd no nonumy et eos dolor magna ipsum.</p>
+                </div>
+            </div>
+            <div class=" row mb-2">
+                <div class="col-2 d-flex justify-content-center align-items-center fs-6 text-white bg-warning">
+                    <i class="fa-solid fa-ethernet fs-1"></i>
+                </div>
+                <div class="col-9">
+                    <h3 class="fw-bolder">International Certificate</h3>
+                    <p class="text-secondary">Labore rebum duo est Sit dolore eos sit tempor eos stet, vero vero
+                        clita magna kasd no nonumy et eos dolor magna ipsum.</p>
+                </div>
+            </div>
+            <div class=" row mb-2">
+                <div class="col-2 d-flex justify-content-center align-items-center fs-6 text-white bg-danger">
+                    <i class="fa-solid fa-book-open-reader fs-1 "></i>
+                </div>
+                <div class="col-9">
+                    <h3 class="fw-bolder">
+                        Online Classes</h3>
+                    <p class="text-secondary">Labore rebum duo est Sit dolore eos sit tempor eos stet, vero vero
+                        clita magna kasd no nonumy et eos dolor magna ipsum.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-4">
+        <img src="assets/imgs/nimgs/feature.jpg" class="w-100 p-5" alt="" style="height: 600px;">
+    </div>
+</div>
+ 
+    <!-- ===============footer ============= -->
+    
+    {% include "footer.html" %}
+    {% include "owlcarusol.html" %}
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block form_view %}
+
+<style>
+ .form-control{
+     margin-top:5px ;
+ }
+ /* #id_name, #id_dob, #id_gender, #id_locality,#id_city, #id_pin, #id_state, #id_mobile, #id_email, #id_job_city{
+     font-weight: bold;
+     font-size: 1rem;
+ }  */
+   label{
+     font-weight: bold;
+     font-size: 1rem;
+   }
+   #id_gender{
+
+     /* display: none; */
+     display: flex;
+     margin-left: 1rem;
+     /* justify-content: center; */
+     gap: 1rem;
+     align-items: center;
+   }
+   #id_objective{
+     max-height: 150px;
+   }
+   #id_languagies{
+     display: flex;
+     margin-left: 1rem;
+     font-weight: 500;
+     gap: 1rem;
+   }
+   #id_languagies, #id_gender label{
+     font-weight: normal;
+   }
+   #id_gender label:{
+     color: blue;
+   }
+   /* label[for="id_gender_0"]{
+     display: none;
+   } */
+   .chaya{
+     box-shadow: inset 5px 5px 5px rgb(221, 221, 221), inset -5px -5px 5px rgb(221, 221, 221);
+   }
+</style>
+<div class="w-100 row">
+    <div class="w-50 mx-auto border border-primary p-4 rounded col-8 my-5 shadow-lg">
+      <h1 class="text-center">Resume form</h1>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{forms.as_p}}
+             <div class="text-center"> <input type="submit" class="btn btn-primary fw-bold "></div>
+    </form>
+    </div>
+    <div class="col-4 d-flex flex-column">
+      <h1>Lists of Resumes</h1>
+      {% for i in cv%}
+        <a  href="{% url 'cvView' i.id%}">{{i.name}}</a>
+      {% endfor %}
+    </div>
+</div>
+<!-- {% for i in cv%}
+        <a  href="{% url 'cvView' i.id%}">{{i.name}}</a> -->
+        <!-- {% for j in i.languagies%}
+          <h1>{{j}}</h1>
+      {% endfor %}
+
+      {% endfor %}-->
+ {% endblock %}

@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block contect %}
+{% load static %}
+<div class="container-fluit position-relative w-100">
+    <div class="d-flex justify-content-center align-items-center flex-column gap-5 z-3 position-absolute top-0 left-0 w-100 "
+        style=" height: 600px; background-color: rgba(5, 0, 0, 0.85);">
+        <h class="text-white text-center ms-5 me-5 fs-1 fw-bolder">
+
+            Contect us as soon as possible</h>
+
+        <div class="d-flex  w-50">
+            <div class="btn-group">
+                <li type="button"
+                    class=" dropdown-toggle text-black fs-4 fw-bold  d-flex justify-content-center align-items-center p-2 px-3 fs-6 fw-bold bg-white border-end border-black"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Cources
+                </li>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Cources1 </a></li>
+                    <li><a class="dropdown-item" href="#">Cources2</a></li>
+                    <li><a class="dropdown-item" href="#">Cources3</a></li>
+                    <li><a class="dropdown-item" href="#">Cources4</a></li>
+                </ul>
+            </div>
+            <input type="text" class=" border border-0 w-75 ps-2" placeholder="Keyword">
+            <button class="w-25 border border-none bg-danger text-white text-bold fs-4">Search</button>
+        </div>
+    </div>
+
+    <div class="w-100 ">
+        <img src="{% static 'assets/imgs/nimgs/page-header.jpg' %}" class="w-100" alt="" style="height: 600px;">
+    </div>
+</div>
+<div class="w-100" style="position: relative; z-index: 10; top: -3rem">
+    <img src="{% static 'assets/imgs/nimgs/overlay-bottom.png' %}" alt="" class="w-100">
+</div>
+<div class="row justify-content-center my-5 w-100">
+    <div class="col-3 mt-5">
+        <div class=" row mb-2">
+            <div class="col-2 d-flex justify-content-center align-items-center text-white bg-primary">
+                <i class="fa-solid fa-location-dot fs-1"></i>
+            </div>
+            <div class="col-9 ms-3">
+
+
+
+                <h3 class="fw-bolder">Our Location</h3>
+                <p class="text-secondary">123 Street, New York, USA</p>
+            </div>
+        </div>
+        <div class=" row mb-2">
+            <div class="col-2 d-flex justify-content-center align-items-center fs-6 text-white bg-warning">
+                <i class="fa-solid fa-phone fs-1"></i>
+            </div>
+            <div class="col-9 ms-3">
+                <h3 class="fw-bolder">Call Us</h3>
+                <p class="text-secondary">+012 345 6789</p>
+            </div>
+        </div>
+        <div class=" row mb-2">
+            <div class="col-2 d-flex justify-content-center align-items-center fs-6 text-white bg-danger">
+                <i class="fa-solid fa-envelope fs-1"></i>
+            </div>
+            <div class="col-9 ms-3">
+                <h3 class="fw-bolder">Email Us</h3>
+                <p class="text-secondary"> info@example.com</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-5">
+        <p class="text-danger ">Need Help?</p>
+        <h1>Send Us A Message</h1>
+        <div class="d-flex flex-column justify-content-center align-item-center gap-3">
+            <div class="d-flex gap-2">
+                <input type="text" class="form-control" placeholder="First name">
+                <input type="text" class="form-control" placeholder="Last name">
+            </div>
+            <input type="text" class="form-control" placeholder="Subject">
+            <textarea name="" id="" class="form-control" placeholder="Messages"></textarea>
+            <button class="btn btn-danger">Submit</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block editprofile %}
+<style>
+    .django>div {
+        width: 100%;
+    }
+
+    .django>div>fieldset>legend {
+        font-size: 1rem;
+        margin-left: .2rem;
+    }
+</style>
+<div class="" style="margin-top:5%; margin-left: 15%">
+    <section class="login common-img-bg">
+        <div class="w-100">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <div class="alert alert-primary" role="alert">
+                    {{message}}
+                </div>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <!-- Container-fluid starts -->
+            <div class="container-fluid d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="login-card card-block bg-white">
+                            <form class="md-float-material" action="" method="post">
+                                {% csrf_token %}
+                                <h3 class="text-center txt-primary">Create an account </h3>
+
+                                <div
+                                    class="django d-flex justify-content-center flex-column gap-2 w-100 md-input-wrapper">
+                                    {{form}}
+                                </div>
+                                <div class="md-input-wrapper">
+                              
+                                </div>
+                                <div class="rkmd-checkbox checkbox-rotate checkbox-ripple b-none m-b-20">
+                                    <label class="input-checkbox checkbox-primary">
+                                        <input type="checkbox" id="checkbox">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                    <div class="captions">Remember Me</div>
+                                </div>
+                                <div class="col-xs-10 offset-xs-1">
+                                    <button type="submit"
+                                        class="btn btn-primary btn-md btn-block waves-effect waves-light m-b-20">Sign up
+                                    </button>
+                                </div><br>
+                                <div class="">
+                                    <div class="col-xs-12 text-center">
+                                        <span class="text-muted">Already have an account?</span>
+                                        <a href="{% url 'login' %}" class="f-w-600 p-l-5"> Sign In Here</a>
+
+                                    </div>
+                                </div>
+
+                            </form>
+                            <!-- end of form -->
+                        </div>
+                        <!-- end of login-card -->
+                    </div>
+                    <!-- end of col-sm-12 -->
+                </div>
+                <!-- end of row-->
+            </div>
+            <!-- end of container-fluid -->
+    </section>
+</div>
+{% endblock %}

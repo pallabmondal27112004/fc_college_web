@@ -1,0 +1,25 @@
+ <!-- ===========jquary============= -->
+ {% load static %}
+
+ <script type="text/javascript">
+     $('.owl-carousel').owlCarousel({
+         loop: true,
+         margin: 10,
+         dots: false,
+         nav: true,
+         autoplay: true,
+         smartSpeed: 3000,
+         autoplayTimeout: 7000,
+         responsive: {
+            0: {
+                items: 1
+             },
+            800: {
+                items: 2
+              },
+            1200: {
+                items: 3
+             }
+         }
+     })
+ </script>

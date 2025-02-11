@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+	{%include 'bootstraplink.html' %}
+	{% include 'dashboard/headerlink.html' %}
+</head>
+
+<body class="">
+	<!-- {% comment %} <div class="d-flex justify-content-center align-items-center mt-5">
+    <div class="w-75 d-flex justify-content-center align-items-center">
+        <div
+            class="w-50 d-flex flex-column justify-content-center align-content-centerp-4 border border-primary rounded shadow-lg">
+            <form method="post" action="#" enctype="multipart/form-data"
+                class=" d-flex flex-column  gap-3 p-2  justify-content-center align-content-center w-100">
+                {% csrf_token %}
+                <div class="d-flex w-100 gap-1">
+                    <input type="text" placeholder="Enter your First name" class="w-50 form-control" name="fname">
+                    <input type="text" placeholder="Enter your Last name" class="w-50 form-control" name="sname">
+                </div>
+                <input type="email" placeholder="Enter your email" class="form-control" name="email">
+                <input type="text" placeholder="Enter your username" class="form-control" name="username">
+                
+                <input type="password" placeholder="Enter your password" class="form-control" name="password">
+                <input type="password" placeholder="Enter your Conform password" class="form-control" name="cpassword">
+                <button class="btn btn-primary" type="submit">Sign in</button>
+            </form>
+        </div>
+    </div>
+</div> {% endcomment %} -->
+	<div class="w-100">
+		{% if messages %}
+		<ul class="messages">
+			{% for message in messages %}
+			<div class="alert alert-danger" role="alert">
+				{{message}}
+			</div>
+			{% endfor %}
+		</ul>
+		{% endif %}
+		<!-- <div class="d-flex justify-content-center align-items-center mt-5">
+    <div class="w-75 d-flex justify-content-center align-items-center">
+        <div
+            class="w-50 d-flex flex-column justify-content-center align-content-centerp-4 border border-primary rounded shadow-lg">
+            <form method="post" action="#" enctype="multipart/form-data"
+                class=" d-flex flex-column  gap-3 p-2  justify-content-center align-content-center w-100">
+                <h1 class="my-2 fs-3 text-center">Login</h1>
+                {% csrf_token %}
+                <input type="email" placeholder="Enter your email" class="form-control" name="email" value="{{value}}" required>
+                <input type="password" placeholder="Enter your password" class="form-control" name="password" required>
+                <div class="d-flex justify-content-center align-items-center" value="">
+                    <input type="submit" class="form-control w-25 btn btn-primary fw-bold fs-6" name="Submit"
+                        value="submit">
+                    <a href="{% url 'register'%}" class="px-2 text-decoration-none text-black">Don't have a accout? <span
+                            class="cursor-pointer text-primary text-decoration-none">Sign in </span></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->
+		<section class="login p-fixed d-flex text-center bg-primary common-img-bg">
+			<!-- Container-fluid starts -->
+			<div class="container-fluid d-flex justify-content-center align-content-center ">
+				<div class="row">
+					<form action="" method="post">
+						{% csrf_token %}
+						<div class="col-sm-12">
+							<div class="login-card card-block">
+								<form class="md-float-material">
+									<div class="text-center">
+									<!-- </div> -->
+									<h3 class="text-center txt-primary">
+										Sign In to your account
+									</h3>
+									<div class="row">
+										<div class="col-md-12">
+											<div class="md-input-wrapper">
+												<input type="email" class="md-form-control" name="email"
+													value="{{value}}" required="required" />
+												<label>Email</label>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="md-input-wrapper">
+												<input type="password" class="md-form-control" name="password"
+													required="required" />
+												<label class>Password</label>
+											</div>
+										</div>
+
+										<div class="col-sm-6 col-xs-12">
+											<div class="rkmd-checkbox checkbox-rotate checkbox-ripple m-b-25">
+												<label class="input-checkbox checkbox-primary">
+													<input type="checkbox" id="checkbox">
+													<span class="checkbox"></span>
+												</label>
+												<div class="captions">Remember Me</div>
+
+											</div>
+										</div>
+										<div class="col-sm-6 col-xs-12 forgot-phone text-right">
+											<a href="forgot-password.html" class="text-right f-w-600"> Forget
+												Password?</a>
+										</div>
+									</div>
+									<div class="d-flex justify-content-center align-items-center">
+										<div class="w-100">
+											 <button type="submit"
+												class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">LOGIN7410</button>
+											
+										</div>
+									</div>
+									<!-- <div class="card-footer"> -->
+									<div class="col-sm-12 col-xs-12 text-center">
+										<span class="text-muted">Don't have an account?</span>
+										<a href="{% url 'register' %}" class="f-w-600 p-l-5">Sign up Now</a>
+									</div>
+
+									<!-- </div> -->
+								</form>
+								<!-- end of form -->
+							</div>
+							<!-- end of login-card -->
+						</div>
+					</form>
+					<!-- end of col-sm-12 -->
+				</div>
+				<!-- end of row -->
+			</div>
+			<!-- end of container-fluid -->
+		</section>
+
+		{%include 'owlcarusol.html' %}
+</body>
+
+</html>

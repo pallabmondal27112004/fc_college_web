@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {%include 'bootstraplink.html' %}
+    {%include 'dashboard/headerlink.html' %}
+    <style>
+        #id_catagory {
+            display: flex;
+            gap: 1.5rem;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- {% comment %} <div class="d-flex justify-content-center align-items-center mt-5">
+    <div class="w-75 d-flex justify-content-center align-items-center">
+        <div
+            class="w-50 d-flex flex-column justify-content-center align-content-centerp-4 border border-primary rounded shadow-lg">
+            <form method="post" action="#" enctype="multipart/form-data"
+                class=" d-flex flex-column  gap-3 p-2  justify-content-center align-content-center w-100">
+                {% csrf_token %}
+                <div class="d-flex w-100 gap-1">
+                    <input type="text" placeholder="Enter your First name" class="w-50 form-control" name="fname">
+                    <input type="text" placeholder="Enter your Last name" class="w-50 form-control" name="sname">
+                </div>
+                <input type="email" placeholder="Enter your email" class="form-control" name="email">
+                <input type="text" placeholder="Enter your username" class="form-control" name="username">
+                
+                <input type="password" placeholder="Enter your password" class="form-control" name="password">
+                <input type="password" placeholder="Enter your Conform password" class="form-control" name="cpassword">
+                <button class="btn btn-primary" type="submit">Sign in</button>
+            </form>
+        </div>
+    </div>
+</div> {% endcomment %} -->
+    {% comment %} <div class="d-flex justify-content-center align-items-center mt-5">
+        <div class="w-75 d-flex justify-content-center align-items-center">
+            <div
+                class="w-50 d-flex flex-column justify-content-center align-content-centerp-4 border border-primary rounded shadow-lg">
+                <form method="post" action="#" enctype="multipart/form-data"
+                    class=" d-flex flex-column  gap-2 p-2  justify-content-center align-content-center w-100">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <input type="password" class="form-control" placeholder="conform password" name="cpassword">
+                    <div class="d-flex justify-content-center align-items-center" value="">
+                        <input type="submit" class="form-control w-25 btn btn-primary fw-bold fs-6" name="Submit"
+                            value="submit">
+                        <a href="{% url 'login'%}" class="px-2 text-decoration-none text-black">Already have a accout?
+                            <span class="cursor-pointer text-primary text-decoration-none">login </span></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div> {% endcomment %}
+    <style>
+        .django>div {
+            width: 100%;
+        }
+
+        .django>div>fieldset>legend {
+            font-size: 1rem;
+            margin-left: .2rem;
+        }
+    </style>
+    <section class="login common-img-bg">
+        <div class="w-100">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <div class="alert alert-primary" role="alert">
+                    {{message}}
+                </div>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <!-- Container-fluid starts -->
+            <div class="container-fluid d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="login-card card-block bg-white">
+                            <form class="md-float-material" action="" method="post">
+                                {% csrf_token %}
+                                <h3 class="text-center txt-primary">Create an account </h3>
+
+                                <div id="parent"
+                                    class="django d-flex justify-content-center flex-column gap-2 w-100 md-input-wrapper">
+                                    {{form}}
+                                </div>
+                                <div class="md-input-wrapper">
+                                    <input type="password" class="md-form-control" required="required"
+                                        placeholder="Conform password" name="cpassword">
+                                </div>
+                                <div class="rkmd-checkbox checkbox-rotate checkbox-ripple b-none m-b-20">
+                                    <label class="input-checkbox checkbox-primary">
+                                        <input type="checkbox" id="checkbox">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                    <div class="captions">Remember Me</div>
+                                </div>
+                                <div class="col-xs-10 offset-xs-1">
+                                    <button type="submit"
+                                        class="btn btn-primary btn-md btn-block waves-effect waves-light m-b-20">Sign up
+                                    </button>
+                                </div><br>
+                                <div class="">
+                                    <div class="col-xs-12 text-center">
+                                        <span class="text-muted">Already have an account?</span>
+                                        <a href="{% url 'login' %}" class="f-w-600 p-l-5"> Sign In Here</a>
+
+                                    </div>
+                                </div>
+
+                            </form>
+                            <!-- end of form -->
+                        </div>
+                        <!-- end of login-card -->
+                    </div>
+                    <!-- end of col-sm-12 -->
+                </div>
+                <!-- end of row-->
+            </div>
+            <!-- end of container-fluid -->
+    </section>
+    <script>
+        // Select the parent element
+        const parentElement = document.getElementById("parent");
+
+        // Select all child elements (nested as well)
+        const allChildElements = parentElement.querySelectorAll("*");
+
+        // Add a class to all child elements
+        allChildElements.forEach((child,index) => {
+            if (index !== 5) { // Skip the element at index 3
+        child.classList.add("md-input-wrapper");
+    }
+        });
+        // Select all <label> elements with the class 'md-input-wrapper'
+        const labels = document.querySelectorAll("label.md-input-wrapper");
+
+        // Loop through each label and remove the class
+        labels.forEach(label => {
+            label.classList.remove("md-input-wrapper");
+        });
+        const input = document.querySelectorAll("input#inputset");
+
+        // Loop through each label and remove the class
+        input.forEach(input => {
+            input.classList.remove("md-input-wrapper");
+        });
+        cata = document.getElementById('id_catagory')
+        cata.forEach(input => {
+            input.classList.remove("md-input-wrapper");
+        });
+        // Select the middle div with the class 'md-input-wrapper'
+        const middleDiv = document.getElementById("parent")[3];
+
+        // Remove the 'md-input-wrapper' class from the middle div
+        middleDiv.classList.remove("md-input-wrapper");
+
+        // Select all input fields within the middle div
+        const inputs = middleDiv.querySelectorAll("input");
+
+        // Remove the 'md-input-wrapper' class from all input fields
+        inputs.forEach(input => {
+            input.classList.remove("md-input-wrapper");
+        });
+        console.log("pakkab")
+
+    </script>
+    {%include 'owlcarusol.html' %}
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+{% extends 'dashboard/base.html' %}
+{%block edit %}
+<style>
+    label[for="id_student_id"] {
+        display: none;
+    }
+</style>
+<section class="login common-img-bg ">
+    <div class="w-100">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <div class="alert alert-primary" role="alert">
+                {{message}}
+            </div>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <!-- Container-fluid starts -->
+        <div class="container-fluid" style="display: flex; justify-content:center;">
+            <div class="row ">
+                <div class="col-sm-12">
+                    <div class="login-card card-block bg-white ">
+                        <form class="md-float-material " action="{% url 'editStudent' pk=student.id %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                        
+                            <div class="django d-flex justify-content-center flex-column gap-2 w-100 md-input-wrapper">
+                                {{form}}
+                            </div>
+                            <div class="col-xs-10 offset-xs-1">
+                                <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light m-b-20">Submit
+                                </button>
+                            </div>
+                        
+                        
+                        </form>
+                        <!-- end of form -->
+                    </div>
+                    <!-- end of login-card -->
+                </div>
+                <!-- end of col-sm-12 -->
+            </div>
+            <!-- end of row-->
+        </div>
+        <!-- end of container-fluid -->
+</section>
+
+
+{%endblock %}

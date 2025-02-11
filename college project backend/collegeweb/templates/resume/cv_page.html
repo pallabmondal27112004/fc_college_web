@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% block resume%}
+{% load static %}
+{% load customeFilter %}
+
+
+<div class="d-flex justify-content-center my-5">
+
+
+    {% for i in data %}
+    <div class="container1 w-50 position-relative">
+        <div class="first position-absolute " style="z-index: 10;">
+            <div class="imgbox">
+                {% if i.profile_image %}
+                <img src="{{i.profile_image.url}}" alt="img">
+                {% else %}
+                <p>no image found</p>
+                {% endif %}
+            </div>
+            <div class="first-1">
+                <p class="fw-bold fs-5 fontFamily">PROFILE</p>
+                <p>Computer application student</p>
+
+            </div>
+            <div class="first-2">
+                <p class="fs-5 fw-bold fontFamily">CONTECT ME</p>
+                <p class="add fontFamily2"><span><i class='bx bx-phone-call'></i></span><span> {{i.mobile}}</span></p>
+                <p class="add size fontFamily2"><span><i class='bx bx-envelope'></i></span><span>{{i.email}}</span></p>
+                <p class="fontFamily2" style="display: flex; justify-content: flex-start; align-items: flex-start;"><span><i
+                            class=' pe-2 bx bx-location-plus'></i></span><span class="mt-2">{{i.locality}}</span></p>
+            </div>
+            <div>
+                <p class="fs-5 fw-bold fontFamily">PROJECTS LIST</p>
+                <ul class="text-white">
+                    <li><a href="{{i.my_file}}" class="text-white text-decoration-none">Ecommerce Website</a></li>
+                    <li><a href="" class="text-white text-decoration-none">Personal Portfolio</a></li>
+                    <li><a href="" class="text-white text-decoration-none">College Website</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="demo">
+
+
+        </div>
+        <!-- </div> -->
+
+
+        <div class="p-4 position-absolute w-100 d-flex justify-content-center align-item-center "
+            style="background-color: rgba(246, 169, 80, 0.429); z-index: 1; left: 0px; top: 1.5rem;">
+            <div class="" style="width: 40%;"></div>
+            <div class="" style="width: 60%;">
+                <h1 class="name " style="font-size: 3rem;">{{i.name}}</h1>
+                <p class="fw-bold gender" style="font-size: 1rem;">{{i.gender}}</p>
+            </div>
+        </div>
+        <div class="second mb-5">
+
+            <div class="mb-2">
+                <h1 class="fontFamily"><span><i class='bx bxs-chevrons-right '></i></span>ACTIVITY</h1>
+                <P class="ms-3 fontFamily2">
+                    {{i.objective}}
+                </P>
+
+            </div>
+            <div class="mb-2">
+                <h1 class="fontFamily"><span><i class='bx bxs-chevrons-right'></i></span>EDUCATION</h1>
+                <div style="margin: 0; padding: 0;" class="ms-3">
+                    <P class="fw-bold">Calcata univercity</P>
+                    <p class="fontFamily2">Bachalar Of Computer Application, 2023-2027</p>
+                </div>
+                <div class="ms-3">
+                    <P class="fw-bold">Makaut univercity</P>
+                    <p class="fontFamily2">Masters Of Computer Application, 2027-2029</p>
+                </div>
+            </div>
+            <div class="mb-2">
+                <h1 class="fontFamily"><span><i class='bx bxs-chevrons-right'></i></span>LANGUAGE</h1>
+                <div>
+                    <ul>
+
+                        <!-- {% for j in i.languagies%}
+                        <li>{{j}}</li>
+                        {% endfor %} -->
+
+                        {% for j in i.languagies|remove_special:"[]'' " %}
+                            <li class="fontFamily2">{{j}}</li>
+                      
+                            {% endfor %}
+                        <!-- <li>Hindi</li> -->
+                    </ul>
+                </div>
+
+            </div>
+            <div class="mb-2">
+                <h1 class="fontFamily"><span><i class='bx bxs-chevrons-right'></i></span>COMPUTER SKILLS</h1>
+                <div>
+                    <ul>
+                        <li class="fontFamily2">{{i.hobbies}}</li>
+                        <li class="fontFamily2">{{i.skill}}</li>
+                        <!-- <li>react</li> -->
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h1 class="fontFamily"><span><i class='bx bxs-chevrons-right'></i></span>EXPERIENCE</h1>
+                <p class="fontFamily2 ms-3">{{i.experience}}</p>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+    <!-- 
+    <div class="bg-white ">
+        {% for i in data %}
+         <h1>{{i.name}}</h1>
+         <h1>{{i.objective}}</h1>
+         <h1>{{i.gender}}</h1>
+         <h1>{{i.email}}</h1>
+         <h1>{{i.dob}}</h1>
+         <h1>{{i.gender}}</h1>
+         <h1>{{i.locality}}</h1>
+         <h1>{{i.mobile}}</h1>
+         <h1>{{i.hobbies}}</h1>
+         <h1>{{i.skill}}</h1>
+         <h1>{{i.languagies}}</h1>
+         <h1>{{i.experience}}</h1>
+         {% if i.profile_image %}
+         <img src="{{i.profile_image.url}}" alt="img">
+         {% else %}
+         <p>no image found</p>
+         {% endif %}
+         <a download="" href="{{i.my_file}}">{{i.my_file}}</a>
+        {% endfor %}
+    </div> -->
+{% endblock %}

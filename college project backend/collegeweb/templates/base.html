@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+<link rel="shortcut icon" href="{% static 'assets/imgs/oimgs/logo1.png' %}" type="image/x-icon">
+
+    {% include "bootstraplink.html" %}
+
+
+</head>
+
+<body>
+    <div class="loader-bg">
+        <div class="loader-bar">
+        </div>
+     </div> 
+    
+    {% include "header.html" %}
+    {% include "nevBar.html" %}
+
+    </div>
+    <!-- ======================body section=================== -->
+    <!-- <div class="container-fluit position-relative w-100">
+        <div class="d-flex justify-content-center align-items-center flex-column gap-5 z-3 position-absolute top-0 left-0 w-100 "
+            style=" height: 600px; background-color: rgba(0,0,0,.85);">
+            <h1 class="text-white text-center fw-bolder" style="font-size: 5rem;">
+
+                Testimonial</h1>
+            <p class="text-white fs-4 fw-bold">Home >> testimonial</p>
+
+
+            <div class="d-flex  w-50">
+                <div class="btn-group">
+                    <li type="button"
+                        class=" dropdown-toggle text-black fs-4 fw-bold  d-flex justify-content-center align-items-center p-2 px-3 fs-6 fw-bold bg-white border-end border-black"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Cources
+                    </li>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Cources1 </a></li>
+                        <li><a class="dropdown-item" href="#">Cources2</a></li>
+                        <li><a class="dropdown-item" href="#">Cources3</a></li>
+                        <li><a class="dropdown-item" href="#">Cources4</a></li>
+                    </ul>
+                </div>
+                <input type="text" class=" border border-0 w-75 ps-2" placeholder="Keyword">
+                <button class="w-25 border border-none bg-danger text-white text-bold fs-4">Search</button>
+            </div>
+        </div>
+
+        <div class="w-100 ">
+            <img src="{% static 'assets/imgs/nimgs/page-header.jpg' %}" class="w-100" alt="" style="height: 600px;">
+        </div>
+    </div> -->
+    <!-- <div class="w-100" style="position: relative; z-index: 10; top:-3rem">
+        <img src="{% static 'assets/imgs/nimgs/overlay-bottom.png' %}" alt="" class="w-100">
+    </div> -->
+
+    {% block courceBlock %}{% endblock %}
+    {% block studentsay %}{% endblock %}
+    {% block index %} {% endblock %}
+    {% block contect %}{% endblock %}
+    {% block about %}{% endblock %}
+    {% block quiz  %}{% endblock %}
+    {% block resume%}{% endblock %}
+    {% block form_view %}{% endblock %}
+    <!-- ===============footer ============= -->
+    {% include "footer.html" %}
+    {% include "owlcarusol.html" %}
+    {% include 'studentsay.html' %}
+    
+    <!-- {% include 'owltesti.html' %} -->
+</body>
+
+</html>
